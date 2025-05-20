@@ -28,11 +28,16 @@ class Numeros:
         else:
             return n3
 
-objeto = Numeros()        
+objeto = Numeros()       
+# Bucle infinito para pedir un input al usuario y que lo pueda detener cuando quiera 
 while True:
     try:
+        # Se le pide al usuario ingresar 3 numeros separados por , para despues dividir el string en 3 variables n1,n2,n3
         n1,n2,n3 = input("Ingresar 3 numeros (separados por ','): ").strip().split(',')
         print(f"El numero mayor es: {objeto.numero_mayor(n1.strip(),n2.strip(),n3.strip())}")
+    # Esta excepcion permite al usuario salirse del programa al pulsar ctrl + d
     except EOFError:
+        # Imprimir una linea vacia dado que la consola no lo hace al terminar el bucle
         print()
+        # Termina el bucle
         break
