@@ -5,7 +5,7 @@ class Calculadora:
     def __init__(self):
         pass
 
-    def sumar(self,n1: int,n2: int):
+    def sumar(self,n1:int,n2:int):
         print(f"Resultado: {n1 + n2}")
 
     # Metodo dividir que recibe 2 parametros, divisor y dividendo
@@ -14,14 +14,20 @@ class Calculadora:
             # Imprime en la consola el texto Resultado y el valor de la division
             print(f"Resultado: {divisor/dividendo}")
             # Atrapa los errores posibles dentro del programa y los guarda en error
-        except (ZeroDivisionError) as error:
+        except ZeroDivisionError as error:
             # Imprime en la consola el texto Error y el mensaje de error almacenado en error
             print(f"Error: {error.args[0]}")
-        except (TypeError) as error:
+        except TypeError as error:
             print(f"Error: {error.args[0]}")
+        except Exception as error:
+            print(f"Error: {error.args[0]}")
+        
+    def restar(self, n1:int,n2:int)->int:
+        return n1 - n2
     
 mi_calculadora = Calculadora()
 mi_calculadora.sumar(10,5)
 mi_calculadora.sumar("Hola ", "Adios")
 mi_calculadora.dividir(10.0,2.0)
 mi_calculadora.dividir("Hola",0.0)
+print(f"Resultado: {mi_calculadora.restar(9,6)}")
