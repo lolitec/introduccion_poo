@@ -31,8 +31,8 @@ class Numeros:
 objeto = Numeros()        
 while True:
     try:
-        n1,n2,n3 = input("Ingresar 3 numeros (separados por ','): ").split(',')
-        print(f"El numero mayor es: {objeto.numero_mayor(n1,n2,n3)}")
+        n1,n2,n3 = input("Ingresar 3 numeros (separados por ','): ").strip().split(',')
+        print(f"El numero mayor es: {objeto.numero_mayor(n1.strip(),n2.strip(),n3.strip())}")
     except EOFError:
         print()
         break
