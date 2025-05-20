@@ -17,7 +17,7 @@ class Calculadora:
         except (ZeroDivisionError) as error:
             # Imprime en la consola el texto Error y el mensaje de error almacenado en error
             print(f"Error: {error.args[0]}")
-        except (ZeroDivisionError) as error:
+        except (TypeError) as error:
             print(f"Error: {error.args[0]}")
     
 mi_calculadora = Calculadora()
